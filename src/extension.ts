@@ -54,23 +54,7 @@ class Aki {
     });
   }
 
-  jumpFore(editor: vscode.TextEditor) {
-    const rangeAfter = this.getRanges(editor, editor.selection.end, getEOF(editor));
-    if (rangeAfter.length) {
-      const next = rangeAfter[0];
-      editor.selection = new vscode.Selection(next.start, next.end);
-    }
-  }
-
-  jumpBack(editor: vscode.TextEditor) {
-    const rangeBefore = this.getRanges(editor, new vscode.Position(0, 0), editor.selection.start);
-    if (rangeBefore.length) {
-      const previous = rangeBefore.slice(-1)[0];
-      editor.selection = new vscode.Selection(previous.start, previous.end);
-    }
-  }
-
-  startSearch(editor: vscode.TextEditor) {
+  startSearch() {
     vscode.commands.executeCommand("workbench.action.findInFiles", {
       query: this.pattern,
       triggerSearch: true,
@@ -100,18 +84,8 @@ export function activate(context: vscode.ExtensionContext) {
     })
   );
   context.subscriptions.push(
-    vscode.commands.registerTextEditorCommand("aki.jumpFore", (editor: vscode.TextEditor) => {
-      AKI.jumpFore(editor);
-    })
-  );
-  context.subscriptions.push(
-    vscode.commands.registerTextEditorCommand("aki.jumpBack", (editor: vscode.TextEditor) => {
-      AKI.jumpBack(editor);
-    })
-  );
-  context.subscriptions.push(
-    vscode.commands.registerTextEditorCommand("aki.startSearch", (editor: vscode.TextEditor) => {
-      AKI.startSearch(editor);
+    vscode.commands.registerTextEditorCommand("aki.openSearchPanel", () => {
+      AKI.startSearch();
     })
   );
 }

@@ -14,9 +14,7 @@
     "onCommand:aki.selectAll",
     "onCommand:aki.selectOnCurrentLine",
     "onCommand:aki.splitSelection",
-    "onCommand:aki.jumpFore",
-    "onCommand:aki.jumpBack",
-    "onCommand:aki.startSearch"
+    "onCommand:aki.openSearchPanel"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -34,16 +32,8 @@
         "title": "aki: split selection to spaces"
       },
       {
-        "command": "aki.jumpFore",
-        "title": "aki: jump to NEXT space"
-      },
-      {
-        "command": "aki.jumpBack",
-        "title": "aki: jump to PREVIOUS space"
-      },
-      {
-        "command": "aki.startSearch",
-        "title": "aki: start search"
+        "command": "aki.openSearchPanel",
+        "title": "aki: open searchPanel"
       }
     ],
     "configuration": {
