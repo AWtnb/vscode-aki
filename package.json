@@ -15,7 +15,8 @@
     "onCommand:aki.selectOnCurrentLine",
     "onCommand:aki.splitSelection",
     "onCommand:aki.jumpFore",
-    "onCommand:aki.jumpBack"
+    "onCommand:aki.jumpBack",
+    "onCommand:aki.startSearch"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -39,6 +40,10 @@
       {
         "command": "aki.jumpBack",
         "title": "aki: jump to PREVIOUS space"
+      },
+      {
+        "command": "aki.startSearch",
+        "title": "aki: start search"
       }
     ],
     "configuration": {

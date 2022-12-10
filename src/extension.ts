@@ -69,6 +69,14 @@ class Aki {
       editor.selection = new vscode.Selection(previous.start, previous.end);
     }
   }
+
+  startSearch(editor: vscode.TextEditor) {
+    vscode.commands.executeCommand("workbench.action.findInFiles", {
+      query: this.pattern,
+      triggerSearch: true,
+      isRegex: true,
+    });
+  }
 }
 
 const config = vscode.workspace.getConfiguration("aki");
@@ -99,6 +107,11 @@ export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
     vscode.commands.registerTextEditorCommand("aki.jumpBack", (editor: vscode.TextEditor) => {
       AKI.jumpBack(editor);
+    })
+  );
+  context.subscriptions.push(
+    vscode.commands.registerTextEditorCommand("aki.startSearch", (editor: vscode.TextEditor) => {
+      AKI.startSearch(editor);
     })
   );
 }
