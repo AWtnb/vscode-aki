@@ -1,8 +1,11 @@
 {
   "name": "aki",
   "displayName": "aki",
-  "description": "select suspicious whitespaces.",
+  "description": "search and select removable whitespaces.",
   "publisher": "awtnb",
+  "repository": {
+    "url": ""
+  },
   "icon": "images/logo.png",
   "version": "0.0.1",
   "engines": {

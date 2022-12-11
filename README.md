@@ -1,71 +1,31 @@
 # aki README
 
-This is the README for your extension "aki". After writing up a brief description, we recommend including the following sections.
+search and select removable whitespaces.
+
+文書中の本来不必要な空白文字（アキ）を検索・選択する。
+
+![img](images/demo.png)
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
++ `setting.json` の `aki.safeChars` で正規表現を指定する（デフォルトは ASCII 文字）。
+    + この正規表現にマッチする文字に **囲まれた** アキは無視する。
 
-For example if there is an image subfolder under your extension project workspace:
+### `aki.selectAll`
 
-\!\[feature X\]\(images/feature-x.png\)
++ 不要なアキをすべて選択する。
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+### `aki.selectOnCurrentLine`
 
-## Requirements
++ カーソルがある行にある、不要なアキをすべて選択する。
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+### `aki.splitSelection`
 
-## Extension Settings
++ 文字列を選択した状態で実行すると、範囲内の不要なアキのみ選択する。
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+### `aki.openSearchPanel`
 
-For example:
++ 検索パネルを開いて不要なアキを検索する。
 
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-Users appreciate release notes as you update your extension.
-
-### 1.0.0
-
-Initial release of ...
-
-### 1.0.1
-
-Fixed issue #.
-
-### 1.1.0
-
-Added features X, Y, and Z.
-
----
-
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
 
 **Enjoy!**
