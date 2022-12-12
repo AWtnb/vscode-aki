@@ -39,17 +39,7 @@
         "command": "aki.openSearchPanel",
         "title": "aki: open searchPanel"
       }
-    ],
-    "configuration": {
-      "title": "aki",
-      "properties": {
-        "aki.safeChars": {
-          "type": "string",
-          "default": "[\\u0020-\\u007e]",
-          "description": "Specifies a regular expression. Whitespace characters sandwiched between characters matching this regular expression are ignored."
-        }
-      }
-    }
+    ]
   },
   "scripts": {
     "vscode:prepublish": "npm run compile",

@@ -8,8 +8,17 @@ search and select removable whitespaces.
 
 ## Features
 
-+ `setting.json` の `aki.safeChars` で正規表現を指定する（デフォルトは ASCII 文字）。
-    + この正規表現にマッチする文字に **囲まれた** アキは無視する。
+下記の正規表現（にマッチする文字）に囲まれた空白文字を検索する。
+
+```
+\u3001-\u30ff\u4e00-\u9fff\uff01-\uff5e
+```
+
++ `\u3001-\u30ff`：日本語約物・ひらがな・カタカナ
++ `\u4e00-\u9fff`：CJK統合漢字（ここに含まれない漢字は見逃してしまう可能性あり）
++ `\uff01-\uff5e`：全角約物・全角英数
+
+
 
 ### `aki.selectAll`
 

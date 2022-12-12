@@ -8,8 +8,8 @@ const getEOF = (editor: vscode.TextEditor): vscode.Position => {
 class Aki {
   pattern: string;
   reg: RegExp;
-  constructor(safeCharPattern: string) {
-    this.pattern = "(?<!" + safeCharPattern + ")\\s+|\\s+(?!" + safeCharPattern + ")";
+  constructor() {
+    this.pattern = "(?<=[\\u3001-\\u30ff\\u4e00-\\u9fff\\uff01-\\uff5e])\\s+(?=[\\u3001-\\u30ff\\u4e00-\\u9fff\\uff01-\\uff5e])";
     this.reg = new RegExp(this.pattern, "g");
   }
 
@@ -63,9 +63,7 @@ class Aki {
   }
 }
 
-const config = vscode.workspace.getConfiguration("aki");
-const safeChars: string = config.get("safeChars") || "";
-const AKI = new Aki(safeChars);
+const AKI = new Aki();
 
 export function activate(context: vscode.ExtensionContext) {
   context.subscriptions.push(
