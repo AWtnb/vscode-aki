@@ -9,7 +9,8 @@ class Aki {
   pattern: string;
   reg: RegExp;
   constructor() {
-    this.pattern = "(?<=[\\u3001-\\u30ff\\u4e00-\\u9fff\\uff01-\\uff5e])\\s+(?=[\\u3001-\\u30ff\\u4e00-\\u9fff\\uff01-\\uff5e])";
+    const unicodeRange = "\\u3001-\\u30ff\\u4e00-\\u9fff\\uff01-\\uff5e";
+    this.pattern = "(?<=[" + unicodeRange + "])\\s+(?=[" + unicodeRange + "])|(?<=\\d)\\s+(?![\\u0021-\\u007e])|(?<![\\u0021-\\u007e])\\s+(?=\\d)";
     this.reg = new RegExp(this.pattern, "g");
   }
 
