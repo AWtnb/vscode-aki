@@ -8,7 +8,7 @@ search and select removable whitespaces.
 
 ## Features
 
-「下記の正規表現（にマッチする文字）に囲まれた空白文字」、もしくは「数字と非 ASCII 文字との間の空白文字」を検索する。
+「下記の正規表現（にマッチする文字）に囲まれた半角空白」、もしくは「数字と非 ASCII 文字との間の半角空白」を検索する。
 
 ```
 \u3001-\u30ff\u4e00-\u9fff\uff01-\uff5e
