@@ -47,12 +47,18 @@ class Aki {
   }
 
   splitSelection(editor: vscode.TextEditor) {
-    if (editor.selection.isEmpty) {
-      return;
-    }
-    editor.selections = this.getRanges(editor, editor.selection.start, editor.selection.end).map((range) => {
-      return new vscode.Selection(range.start, range.end);
-    });
+    const newSels: vscode.Selection[] = [];
+    editor.selections
+      .filter((sel) => !sel.isEmpty)
+      .forEach((sel) => {
+        const start = new vscode.Position(sel.start.line, 0);
+        const end = new vscode.Position(sel.end.line, editor.document.lineAt(sel.end.line).text.length);
+        this.getRanges(editor, start, end).forEach((range) => {
+          const sel = new vscode.Selection(range.start, range.end);
+          newSels.push(sel);
+        });
+      });
+    editor.selections = newSels;
   }
 
   startSearch() {
