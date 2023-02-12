@@ -70,9 +70,9 @@ class Aki {
   }
 }
 
-const AKI = new Aki();
-
 export function activate(context: vscode.ExtensionContext) {
+  const AKI = new Aki();
+
   context.subscriptions.push(
     vscode.commands.registerTextEditorCommand("aki.selectAll", (editor: vscode.TextEditor) => {
       AKI.selectAll(editor);
