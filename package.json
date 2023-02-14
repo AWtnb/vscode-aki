@@ -14,6 +14,11 @@
   "categories": [
     "Other"
   ],
+  "keywords": [
+    "Japanese",
+    "Formatter",
+    "Noise-reduction"
+  ],
   "activationEvents": [
     "onCommand:aki.selectAll",
     "onCommand:aki.selectOnCurrentLine",
