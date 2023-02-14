@@ -89,7 +89,7 @@ export function activate(context: vscode.ExtensionContext) {
     })
   );
   context.subscriptions.push(
-    vscode.commands.registerTextEditorCommand("aki.openSearchPanel", () => {
+    vscode.commands.registerCommand("aki.openSearchPanel", () => {
       AKI.startSearch();
     })
   );
