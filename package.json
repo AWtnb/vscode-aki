@@ -30,19 +30,23 @@
     "commands": [
       {
         "command": "aki.selectAll",
-        "title": "aki: select-all"
+        "title": "select-all",
+        "category": "aki"
       },
       {
         "command": "aki.selectOnCurrentLine",
-        "title": "aki: select on current line"
+        "title": "select on current line",
+        "category": "aki"
       },
       {
         "command": "aki.splitSelection",
-        "title": "aki: split selection to spaces"
+        "title": "split selection to spaces",
+        "category": "aki"
       },
       {
         "command": "aki.openSearchPanel",
-        "title": "aki: open searchPanel"
+        "title": "open searchPanel",
+        "category": "aki"
       }
     ]
   },
